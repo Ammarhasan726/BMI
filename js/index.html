@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { 
+            margin: 0;padding: 0;
+            text-align: center;
+            background-color: blue;
+        }
+
+        #weight,#length {
+            font-size: 25px;
+            border-radius: 40px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            height: 100px;
+            width: 600px;
+            text-align: center;
+        }
+        div{
+    position: absolute;
+    top: 200px;
+    width: -webkit-fill-available;
+        }
+        #sub   {
+            font-size: 25px;font-weight: bold;
+            background-color: limegreen;
+          height: 100px;width: 600px;border-radius: 30px;
+        }
+        label{
+           
+        }
+        h1{
+            color: linen;
+            border-radius: 10px;
+            display: inline-block;
+            height: 50px;width: 600px;
+            background-color: limegreen;
+            text-align: center;font-size: 40px;
+        }
+        #image {
+            position: relative;
+            top: 0px;left: 0px;
+            height: fit-content;width: fit-content;
+            
+        }
+        img{
+            width: -webkit-fill-available;
+            height: 1500px;
+        }
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("form").onsubmit = function cal() {
+                let lenght = document.querySelector("#length").value;
+                let weight = document.querySelector("#weight").value;
+                let finall = lenght * lenght / 10000;
+                let result = weight / finall;
+                if (result < 18.5) {
+                    document.querySelector("#result").innerHTML = "Your BMI Is Under Weight";
+                }
+                else if (result > 18.5 && result < 24.9) {
+                    document.querySelector("#result").innerHTML = "Your BMI Is Normal";
+                }
+                else if (29.9 > result > 24.9) {
+                    document.querySelector("#result").innerHTML = "Your BMI Is Over Weight";
+                }
+                else if (29.9 < result < 34.9) {
+                    document.querySelector("#result").innerHTML = "Your BMI Is Obese";
+                    document.querySelector("#result").s
+                }
+                alert(result);
+                return false;
+            };
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="image"><img src="./img/images.jpg" alt=""></div>
+    <div>
+        <form action="">
+            <input id="weight" placeholder="Enter Your weight in Kg"><br>
+            <input id="length" placeholder="Enter Your length in Cm"><br>
+            <input id="sub" type="submit"><br>
+            
+        </form>
+        <h1 id="result">
+            Result
+        </h1>
+    </div>
+</body>
+
+</html>
